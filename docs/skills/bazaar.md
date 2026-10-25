@@ -52,6 +52,10 @@ metadata:
 
 Both hook scripts must remain synchronized: `hooks.py` (host `/run/host/etc/bazaar/hooks.py`) and `bazaar-hook` (`/usr/libexec/bazaar-hook`) must implement identical hook IDs, stages, and package redirect actions.
 
+### Developer Experience redirection (`run-devmode`)
+
+Intercepted IDE transaction dialogs (`jetbrains-toolbox`, `vscode`, `vscodium`, `zed`) present a `run-devmode` option. Choosing this executes `spawn_chairlift_dx_mode()`, launching ChairLift directly to its Developer Mode toggle screen via `flatpak-spawn --host /home/linuxbrew/.linuxbrew/bin/chairlift-wrapper --dx-mode`. Note that launching `--dx-mode` requires a ChairLift release containing the `--dx-mode` launch intent.
+
 ## Curated schema specification
 
 Bazaar (`io.github.kolunmi.Bazaar`) uses a typed schema rooted at `rows:`.
